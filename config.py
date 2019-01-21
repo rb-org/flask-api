@@ -13,7 +13,7 @@ app = connex_app.app
 
 # Build the Sqlite ULR for SqlAlchemy
 # sql_url = "sqlite:////" + os.path.join(basedir, "people.db")
-sql_url = 'mysql://flask:ComplexPassw0rd!@192.168.113.129/people'
+sql_url = 'mysql://flask:ComplexPassw0rd!@localhost/people'
 
 # Configure the SqlAlchemy part of the app instance
 app.config["SQLALCHEMY_ECHO"] = True
