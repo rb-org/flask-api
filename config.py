@@ -1,8 +1,8 @@
 import os
 import connexion
+import pymysql
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
-from SQLAlchemy import *
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
