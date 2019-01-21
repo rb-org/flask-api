@@ -1,7 +1,7 @@
 import os
 import connexion
 import pymysql
-from flask import flask
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 
@@ -16,7 +16,7 @@ from flask_marshmallow import Marshmallow
 # Build the Sqlite ULR for SqlAlchemy
 # sql_url = "sqlite:////" + os.path.join(basedir, "people.db")
 
-app = flask(__name__)
+app = Flask(__name__)
 
 sql_url = 'mysql+pymysql://flask:ComplexPassw0rd!@localhost:3306/people'
 
