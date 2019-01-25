@@ -6,6 +6,10 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 
 basedir = os.path.abspath(os.path.dirname(__file__))
+db_user = os.environ["db_user"]
+db_password = os.environ["db_password"]
+db_address = os.environ["db_address"]
+db_port = os.environ["db_port"]
 
 # Create the connexion application instance
 connex_app = connexion.App(__name__, specification_dir=basedir)
@@ -18,7 +22,7 @@ app = connex_app.app
 
 # app = Flask(__name__)
 
-sql_url = "mysql://{db_user}:{db_password}@{db_address}:{db_port}/people"
+sql_url = "mysql://{}:{}@{}:{}/people".format(db_user,db_password,db_address,db_port)
 # sql_url = 'mysql+pymysql://flask:ComplexPassw0rd!@localhost:3306/people'
 
 # Configure the SqlAlchemy part of the app instance
