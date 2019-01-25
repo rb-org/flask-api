@@ -6,10 +6,10 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 
 basedir = os.path.abspath(os.path.dirname(__file__))
-db_user = os.environ["db_user"]
-db_password = os.environ["db_password"]
-db_address = os.environ["db_address"]
-db_port = os.environ["db_port"]
+db_user = os.environ.get('db_user')
+db_password = os.environ.get('db_password')
+db_address = os.environ.get('db_address')
+db_port = os.environ.get('db_port')
 
 # Create the connexion application instance
 connex_app = connexion.App(__name__, specification_dir=basedir)

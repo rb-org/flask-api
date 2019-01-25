@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+
+    flaskapi:
+        build: .
+        image: ruebroad/flaskapi
+        ports:
+            - "5000:5000"
+        stop_signal: SIGINT
+        environment:
+            - db_user=flask
+            - db_passowrd=ComplexPassw0rd!
+            - db_address=localhost
+            db_port=3306
