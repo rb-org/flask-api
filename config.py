@@ -18,7 +18,7 @@ app = connex_app.app
 
 # app = Flask(__name__)
 
-sql_url = "mysql://${db_user}:${db_password}@${db_address}:${db_port}/people"
+sql_url = "mysql://{db_user}:{db_password}@{db_address}:{db_port}/people"
 # sql_url = 'mysql+pymysql://flask:ComplexPassw0rd!@localhost:3306/people'
 
 # Configure the SqlAlchemy part of the app instance
