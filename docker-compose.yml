@@ -10,6 +10,6 @@ services:
         stop_signal: SIGINT
         environment:
             - db_user=flask
-            - db_passowrd=ComplexPassw0rd!
+            - db_password=ComplexPassw0rd!
             - db_address=localhost
             - db_port=3306
