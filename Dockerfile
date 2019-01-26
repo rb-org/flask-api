@@ -10,6 +10,9 @@ WORKDIR $APP_DIR
 
 COPY --chown=flaskapi:flaskapi ./flaskapi $APP_DIR/
 
+# Install any needed packages specified in requirements.txt
+RUN pip install --trusted-host pypi.python.org -r requirements.txt
+
 USER flaskapi
 
 # Default Flask port

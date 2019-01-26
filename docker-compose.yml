@@ -4,7 +4,7 @@ services:
 
     flaskapi:
         build: .
-        image: ruebroad/flaskapi
+        image: flaskapi
         ports:
             - "5000:5000"
         stop_signal: SIGINT
