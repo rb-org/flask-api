@@ -1,10 +1,23 @@
-pip install virtualenv
-virtualenv env --python=python
+apt ins
+
+sudo pip install virtualenv
+sudo virtualenv env --python=python3
 source env/bin/activate
 
-pip install flask connexion Flask-SQLAlchemy flask-marshmallow marshmallow-sqlalchemy marshmallow swagger-ui-bundle
+sudo pip install flask \
+  connexion \
+  Flask-SQLAlchemy \
+  flask-marshmallow \
+  marshmallow-sqlalchemy \
+  marshmallow \
+  swagger-ui-bundle \
+  Flask-MySQL \
+  Flask-SQLAlchemy \
+  PyMySQL \
+  PyYAML \
+  mysqlclient \
 
-pip install --upgrade setuptools
-pip install pymysql
-pip install flask-mysql
+sudo pip install --upgrade setuptools
+
+
 

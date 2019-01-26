@@ -5,7 +5,7 @@ CREATE DATABASE people;
 USE people
 GRANT ALL ON people.* TO 'flask'@'%' IDENTIFIED BY 'ComplexPassw0rd!';
 GRANT ALL ON people.* TO 'flask'@'localhost' IDENTIFIED BY 'ComplexPassw0rd!';
-WITH GRANT OPTION;
+-- WITH GRANT OPTION;
 
 USE people
 
