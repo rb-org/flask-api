@@ -1,14 +1,14 @@
-CREATE USER 'flask'@'localhost' IDENTIFIED BY 'ComplexPassw0rd!';
+CREATE USER 'flask'@'%' IDENTIFIED BY 'ComplexPassw0rd!';
 
 
 CREATE DATABASE people;
 USE people
-GRANT ALL ON people.* TO 'flask'@'localhost';
+GRANT ALL ON people.* TO 'flask'@'%';
 quit;
 
 CREATE DATABASE cars;
 USE cars
-GRANT ALL ON cars.* TO 'flask'@'localhost';
+GRANT ALL ON cars.* TO 'flask'@'%';
 quit;
 
 USE people
@@ -25,3 +25,5 @@ INSERT INTO person VALUES(1, 'Kenny', 'Rogers', NOW());
 INSERT INTO person VALUES(2, 'Mercedes', 'Benx',NOW());
 INSERT INTO person VALUES(3, 'Mini', 'Cooper', NOW());
 COMMIT;
+
+uninstall plugin validate_password;

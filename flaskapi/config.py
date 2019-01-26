@@ -10,6 +10,7 @@ db_user = os.environ.get('db_user')
 db_password = os.environ.get('db_password')
 db_address = os.environ.get('db_address')
 db_port = os.environ.get('db_port')
+db_database = os.environ.get('db_database')
 
 # Create the connexion application instance
 connex_app = connexion.App(__name__, specification_dir=basedir)
@@ -22,7 +23,7 @@ app = connex_app.app
 
 # app = Flask(__name__)
 
-sql_url = "mysql://{}:{}@{}:{}/people".format(db_user,db_password,db_address,db_port)
+sql_url = "mysql+pymysql://{}:{}@{}:{}/{}".format(db_user,db_password,db_address,db_port,db_database)
 # sql_url = 'mysql+pymysql://flask:ComplexPassw0rd!@localhost:3306/people'
 
 # Configure the SqlAlchemy part of the app instance
