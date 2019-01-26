@@ -8,14 +8,16 @@ RUN groupadd -r flaskapi && \
 
 WORKDIR $APP_DIR
 
+COPY requirements.txt $APP_DIR/
 COPY --chown=flaskapi:flaskapi ./flaskapi $APP_DIR/
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --trusted-host pypi.python.org -r requirements.txt
+RUN pip install -U pip && \
+  pip install --trusted-host pypi.python.org -r requirements.txt
 
 USER flaskapi
 
 # Default Flask port
 EXPOSE 5000
 
-CMD ["python server.py"]
+# CMD ["python server.py"]
