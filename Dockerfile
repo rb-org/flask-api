@@ -20,4 +20,4 @@ USER flaskapi
 # Default Flask port
 EXPOSE 5000
 
-# CMD ["python server.py"]
+CMD ["python", "server.py"]

@@ -1,9 +1,13 @@
-CREATE USER 'flask'@'%' IDENTIFIED BY 'ComplexPassw0rd!';
-
+CREATE USER 'flask3'@'%' IDENTIFIED BY 'ComplexPassw0rd!';
+CREATE USER 'flask3'@'localhost' IDENTIFIED BY 'ComplexPassw0rd!';
+USE people
+GRANT ALL ON people.* TO 'flask3'@'%';
+GRANT ALL ON people.* TO 'flask3'@'localhost';
 
 CREATE DATABASE people;
 USE people
-GRANT ALL ON people.* TO 'flask'@'%';
+GRANT ALL ON people.* TO 'flask2'@'%'
+WITH GRANT OPTION;
 quit;
 
 CREATE DATABASE cars;

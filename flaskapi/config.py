@@ -4,6 +4,8 @@ import pymysql
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
+from urllib.parse import quote
+
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 db_user = os.environ.get('db_user')
