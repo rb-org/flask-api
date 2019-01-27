@@ -18,15 +18,14 @@ connex_app = connexion.App(__name__, specification_dir=basedir)
 # Get the underlying Flask app instance
 app = connex_app.app
 
-# Build the Sqlite ULR for SqlAlchemy
+# Build the Sqlite URI for SqlAlchemy
 # sql_url = "sqlite:////" + os.path.join(basedir, "people.db")
 
-# app = Flask(__name__)
+# Build the mysqlclient URI for SqlAlchemy
+sql_url = "mysql://{}:{}@{}:{}/{}".format(db_user, db_password, db_address, db_port, db_database)
 
-sql_url = "mysql://{}:{}@{}:{}/{}".format(db_user, db_password, db_address,
-                                          db_port, db_database)
+# Build the mymysql URI for SqlAlchemy
 # sql_url = "mysql+pymysql://{}:{}@{}:{}/{}".format(db_user,db_password,db_address,db_port,db_database)
-# sql_url = 'mysql+pymysql://flask:ComplexPassw0rd!@localhost:3306/people'
 
 # Configure the SqlAlchemy part of the app instance
 app.config["SQLALCHEMY_ECHO"] = True
@@ -38,5 +37,3 @@ db = SQLAlchemy(app)
 
 # Initialize Marshmallow
 ma = Marshmallow(app)
-
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://{DB_USERNAME}:{DB_PASSWORD}@localhost:3306/{DB_NAME}'
