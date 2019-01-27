@@ -11,5 +11,6 @@ services:
         environment:
             - db_user=flask
             - db_password=ComplexPassw0rd!
-            - db_address=localhost
+            - db_address=192.168.192.21
             - db_port=3306
+            - db_database=people

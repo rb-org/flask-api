@@ -20,7 +20,7 @@ sudo -H pip3 install --upgrade setuptools
 
 # Python 2
 sudo -H pip install virtualenv
-sudo -H virtualenv env2 --python=python3
+sudo -H virtualenv env2 --python=python
 source env2/bin/activate
 
 sudo -H pip install flask \
@@ -37,4 +37,3 @@ sudo -H pip install flask \
   mysqlclient 
 
 sudo -H pip install --upgrade setuptools
-
