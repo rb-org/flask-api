@@ -9,7 +9,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 db_user = os.environ.get('db_user')
 db_password = os.environ.get('db_password')
 db_address = os.environ.get('db_address')
-db_port = os.environ.get('db_port')
+# db_port = os.environ.get('db_port')
 db_database = os.environ.get('db_database')
 
 # Create the connexion application instance
@@ -22,9 +22,13 @@ app = connex_app.app
 # sql_url = "sqlite:////" + os.path.join(basedir, "people.db")
 
 # Build the mysqlclient URI for SqlAlchemy
-sql_url = "mysql://{}:{}@{}:{}/{}".format(db_user, db_password, db_address, db_port, db_database)
+# For RDS we can take out the port because the RDS URL already includes the port
+sql_url = "mysql://{}:{}@{}/{}".format(db_user, db_password, db_address, db_database)
 
-# Build the mymysql URI for SqlAlchemy
+# If we need to include the port then use this URL
+# sql_url = "mysql://{}:{}@{}:{}/{}".format(db_user,db_password,db_address,db_port,db_database)
+
+# Build the mysql URI for SqlAlchemy
 # sql_url = "mysql+pymysql://{}:{}@{}:{}/{}".format(db_user,db_password,db_address,db_port,db_database)
 
 # Configure the SqlAlchemy part of the app instance
